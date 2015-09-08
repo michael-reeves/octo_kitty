@@ -31,6 +31,10 @@ RSpec.configure do |config|
     end
   end
 
+  config.before(:each) do
+    OmniAuth.config.mock_auth[:github] = nil
+  end
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
@@ -103,4 +107,15 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+end
+
+def login_user
+  OmniAuth.config.test_mode = true
+
+  OmniAuth.config.mock_auth[:github] = {
+      :provider => 'github',
+      :uid => '123545'
+      # etc.
+    }
+
 end
