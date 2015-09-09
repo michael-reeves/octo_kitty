@@ -32,17 +32,6 @@ RSpec.configure do |config|
     end
   end
 
-  OmniAuth.config.test_mode = true
-  OmniAuth.config.mock_auth[:github] = {
-    provider: 'github',
-    uid: '1235456',
-    info: { email: 'michael@example.com',
-            nickname: 'example-user',
-            name:     'Michael Example',
-            image_url: 'http://fakeaddress.com/image.jpg' }
-  }
-
-
 # OmniAuth.config.add_mock(:github, omniauth_hash)
 
   config.before(:each) do
@@ -124,6 +113,16 @@ RSpec.configure do |config|
 end
 
 def login_user
+  OmniAuth.config.test_mode = true
 
+  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+    provider: 'github',
+    uid: '1235456',
+    credentials: { token: '123456789' },
+    info: { email:    'michael@example.com',
+            nickname: 'example-user',
+            name:     'Michael Example',
+            image:    'http://fakeaddress.com/image.jpg' }
+  })
 
 end
