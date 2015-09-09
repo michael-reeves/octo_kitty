@@ -16,6 +16,7 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
 RSpec.configure do |config|
   # elimiate garbage in backtrace
   config.backtrace_exclusion_patterns << %r{/gems/}
@@ -30,6 +31,19 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:github] = {
+    provider: 'github',
+    uid: '1235456',
+    info: { email: 'michael@example.com',
+            nickname: 'example-user',
+            name:     'Michael Example',
+            image_url: 'http://fakeaddress.com/image.jpg' }
+  }
+
+
+# OmniAuth.config.add_mock(:github, omniauth_hash)
 
   config.before(:each) do
     OmniAuth.config.mock_auth[:github] = nil
@@ -110,15 +124,6 @@ RSpec.configure do |config|
 end
 
 def login_user
-  OmniAuth.config.test_mode = true
 
-  OmniAuth.config.mock_auth[:github] = {
-      provider: 'github',
-      uid: '1235456',
-      info: { email: 'michael@example.com',
-              nickname: 'example-user',
-              name:     'Michael Example',
-              image_url: 'http://fakeaddress.com/image.jpg' }
-    }
 
 end
