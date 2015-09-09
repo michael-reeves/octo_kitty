@@ -113,9 +113,12 @@ def login_user
   OmniAuth.config.test_mode = true
 
   OmniAuth.config.mock_auth[:github] = {
-      :provider => 'github',
-      :uid => '123545'
-      # etc.
+      provider: 'github',
+      uid: '1235456',
+      info: { email: 'michael@example.com',
+              nickname: 'example-user',
+              name:     'Michael Example',
+              image_url: 'http://fakeaddress.com/image.jpg' }
     }
 
 end
