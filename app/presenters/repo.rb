@@ -3,16 +3,16 @@ class Repo
               :git_url, :ssh_url, :open_issues, :updated_at
 
 
-  def initialize(request)
-    @raw_request = request
-    @id          = request[:id]
-    @name        = request[:name]
-    @description = request[:description]
-    @owner       = request[:owner][:login]
-    @html_url    = request[:html_url]
-    @git_url     = request[:git_url]
-    @ssh_url     = request[:ssh_url]
-    @open_issues = request[:open_issues]
-    @updated_at  = request[:updated_at]
+  def initialize(repo)
+    @raw_request = repo
+    @id          = repo[:id]
+    @name        = repo[:name]
+    @description = repo[:description]
+    @owner       = repo[:owner][:login]
+    @html_url    = repo[:html_url]
+    @git_url     = repo[:git_url]
+    @ssh_url     = repo[:ssh_url]
+    @open_issues = repo[:open_issues]
+    @updated_at  = Time.parse(repo[:updated_at])
   end
 end

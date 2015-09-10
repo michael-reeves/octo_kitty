@@ -10,18 +10,24 @@ class Github
     @events ||= begin
       response = HTTParty.get("https://api.github.com/users/#{@username}/events?per_page=100")
 
-      JSON.parse(response.body).map do |event|
-        OpenStruct.new(event)
-      end
+      JSON.parse(response.body, symbolize_names: true)
     end
   end
 
   def pull_requests
     pull_requests = events.find_all do |event|
-      event.type == 'PullRequestEvent'
+      event[:type] == 'PullRequestEvent'
     end
 
-    pull_requests.map{ |r| PullRequestEvent.new(r) }
+    pull_requests.map { |request| PullRequestEvent.new(request) }
+  end
+
+  def pushes
+    pushes = events.find_all do |event|
+      event[:type] == 'PushEvent'
+    end
+
+    pushes.map { |push| PushEvent.new(push) }
   end
 
   def repos

@@ -89,7 +89,7 @@
                       <span class="repo-name">
                         <%= link_to "#{repo.owner}/#{repo.name}", repo.html_url %>
                       </span>
-                      <span class="last-updated">Updated <%= Time.parse(repo.updated_at).strftime("%Y-%m-%d") %></span>
+                      <span class="last-updated">Updated <%= repo.updated_at.strftime("%Y-%m-%d") %></span>
                     </li>
                   <% end %>
                 </ul>
@@ -105,7 +105,7 @@
                         <%= link_to pull_request.title, pull_request.url %>
                       </span>
                       <span class="last-updated">
-                        Updated <%= Time.parse(pull_request.updated_at).strftime("%Y-%m-%d") %>
+                        Updated <%=  pull_request.updated_at.strftime("%Y-%m-%d") %>
                       </span>
                     </li>
                   <% end %>

@@ -12,23 +12,37 @@ describe Github, :vcr do
     it 'the events have data' do
       github = Github.new('michael-reeves')
       events = github.events
-      event = events.first
-      expect(event.id).to eq '3132750878'
+      event  = events.first
+
+      expect(event[:id]).to eq '3132750878'
     end
   end
 
   describe '#pull_requests' do
     it 'have data' do
-      github = Github.new('michael-reeves')
+      github       = Github.new('michael-reeves')
       pull_request = github.pull_requests.first
 
-      expect(pull_request.id).to eq '3125432462'
+      expect(pull_request.id).to             eq '3125432462'
       expect(pull_request.actor_nickname).to eq 'michael-reeves'
-      expect(pull_request.repo).to eq 'mrjaimisra/the_pivot'
+      expect(pull_request.repo).to           eq 'mrjaimisra/the_pivot'
       expect(pull_request.url).to eq 'https://github.com/mrjaimisra/the_pivot/pull/80'
-      expect(pull_request.title).to eq 'Fix store admin permission'
-      expect(pull_request.updated_at).to eq '2015-09-07T22:58:24Z'
-      expect(pull_request.action).to eq 'opened'
+      expect(pull_request.title).to          eq 'Fix store admin permission'
+      expect(pull_request.updated_at.strftime("%Y-%m-%d")).to eq '2015-09-07'
+      expect(pull_request.action).to         eq 'opened'
+    end
+  end
+
+  describe '#pushes' do
+    it "have data" do
+      github  = Github.new('michael-reeves')
+      push = github.pushes.first
+
+      expect(push.id).to             eq '3136695177'
+      expect(push.repo).to           eq 'michael-reeves/octo_kitty'
+      expect(push.actor_nickname).to eq 'michael-reeves'
+      expect(push.size).to           eq 4
+      expect(push.commits.count).to  eq 4
     end
   end
 
@@ -49,8 +63,8 @@ describe Github, :vcr do
   describe '#repos' do
     it "have data" do
       github = Github.new('michael-reeves')
-      repos   = github.repos
-      repo    = repos.first
+      repos  = github.repos
+      repo   = repos.first
 
       expect(repo.id).to          eq 39031779
       expect(repo.name).to        eq 'active-record-sinatra'
