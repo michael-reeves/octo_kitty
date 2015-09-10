@@ -19,6 +19,45 @@ img.img-circle.img-thumbnail {
   }
 }
 
+.profile {
+  max-height: 170px;
+  img {
+    max-height: 160px;
+    width: auto;
+  }
+  .company-info {
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    margin-top: .3em;
+  }
+  table {
+    margin-left: 15px;
+    tr {
+      margin: 0px;
+    }
+    th, td {
+      padding: 5px;
+      text-align: center;
+    }
+    th {
+      margin-top: 0px;
+    }
+    td {
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+      font-weight: 600;
+      font-size: 1.5em;
+    }
+    h6 {
+      font-size-adjust: 0.5;
+    }
+  }
+}
+
+.pill-container{
+  clear: both;
+}
+
 .recent-activity ul {
   list-style: none;
   li {

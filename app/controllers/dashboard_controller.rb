@@ -8,7 +8,9 @@ class DashboardController < ApplicationController
 
     github = Github.new(current_user.nickname)
     @pull_requests = github.pull_requests
-
+    @user          = github.user
+    
+# pry
     # events = github.events
     # event_types = {
     #   "PushEvent" => "push",

@@ -16,11 +16,11 @@ class Github
   end
 
   def pull_requests
-    requests = events.find_all do |event|
+    pull_requests = events.find_all do |event|
       event.type == 'PullRequestEvent'
     end
 
-    requests.map{ |r| PullRequestEvent.new(r) }
+    pull_requests.map{ |r| PullRequestEvent.new(r) }
   end
 
   def repos
@@ -29,6 +29,12 @@ class Github
     JSON.parse(response.body).map do |repo|
       OpenStruct.new(repo)
     end
+  end
+
+  def user
+    response = HTTParty.get("https://api.github.com/users/#{@username}")
+
+    OpenStruct.new(JSON.parse(response.body))
   end
 
   def starred
@@ -41,9 +47,5 @@ class Github
 
   def following
     response = HTTParty.get("https://api.github.com/users/#{@username}/following")
-  end
-
-  def user
-    response = HTTParty.get("https://api.github.com/users/#{@username}")
   end
 end
