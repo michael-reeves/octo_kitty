@@ -77,40 +77,21 @@
         <div class="row">
           <div class="bs-component pill-container">
             <ul class="nav nav-pills">
-              <li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>
+              <li class="active"><a href="#repositories" data-toggle="tab">Repositories</a></li>
               <li><a href="#pull-requests" data-toggle="tab">Pull Requests</a></li>
             </ul>
             <div id="myTabContent" class="tab-content">
-              <div class="tab-pane fade active in" id="overview">
+              <div class="tab-pane fade active in" id="repositories">
                 <ul class="repository-list">
-                  <li class="repository-item">
-                    <span class="repo-icon mega-octicon octicon-mark-github"></span>
-                    <span class="repo-name">
-                      <a href="#">michael-reeves/the_pivot</a>
-                    </span>
-                    <span class="last-updated">Updated 2015-08-15</span>
-                  </li>
-                  <li class="repository-item">
-                    <span class="repo-icon mega-octicon octicon-mark-github"></span>
-                    <span class="repo-name">
-                      <a href="#">michael-reeves/redrum_nursery</a>
-                    </span>
-                    <span class="last-updated">Updated 2015-08-15</span>
-                  </li>
-                  <li class="repository-item">
-                    <span class="repo-icon mega-octicon octicon-mark-github"></span>
-                    <span class="repo-name">
-                      <a href="#">michael-reeves/chisel</a>
-                    </span>
-                    <span class="last-updated">Updated 2015-08-01</span>
-                  </li>
-                  <li class="repository-item">
-                    <span class="repo-icon mega-octicon octicon-mark-github"></span>
-                    <span class="repo-name">
-                      <a href="#">michael-reeves/sales_engine</a>
-                    </span>
-                    <span class="last-updated">Updated 2015-06-15</span>
-                  </li>
+                  <% @repos.each do |repo| %>
+                    <li class="repository-item">
+                      <span class="repo-icon mega-octicon octicon-mark-github"></span>
+                      <span class="repo-name">
+                        <%= link_to "#{repo.owner}/#{repo.name}", repo.html_url %>
+                      </span>
+                      <span class="last-updated">Updated <%= Time.parse(repo.updated_at).strftime("%Y-%m-%d") %></span>
+                    </li>
+                  <% end %>
                 </ul>
               </div>
 

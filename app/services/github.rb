@@ -27,7 +27,7 @@ class Github
   def repos
     response = HTTParty.get("https://api.github.com/users/#{@username}/repos?per_page=100")
 
-    JSON.parse(response.body, symbolize_names: true).map do |request|
+    output = JSON.parse(response.body, symbolize_names: true).map do |request|
       Repo.new(request)
     end
   end
