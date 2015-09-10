@@ -16,11 +16,11 @@ class Github
   end
 
   def pull_requests
-    requests =  events.find_all do |event|
+    requests = events.find_all do |event|
       event.type == 'PullRequestEvent'
     end
 
-    requests.map{|r| PullRequestEvent.new(r)}
+    requests.map{ |r| PullRequestEvent.new(r) }
   end
 
   def repos

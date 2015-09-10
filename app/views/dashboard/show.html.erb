@@ -541,7 +541,7 @@
             <li><a href="#pull-requests" data-toggle="tab">Pull Requests</a></li>
           </ul>
           <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade active in" id="home">
+            <div class="tab-pane fade active in" id="overview">
               <ul class="repository-list">
                 <li class="repository-item">
                   <span class="repo-icon mega-octicon octicon-mark-github"></span>
@@ -576,34 +576,17 @@
 
             <div class="tab-pane fade" id="pull-requests">
               <ul class="pull-request-list">
-                <li class="pull-request-item">
-                  <span class="pull-request-icon mega-octicon octicon-git-pull-request"></span>
-                  <span class="repo-name">
-                    <a href="#">michael-reeves/the_pivot</a>
-                  </span>
-                  <span class="last-updated">Updated 2015-08-15</span>
-                </li>
-                <li class="pull-request-item">
-                  <span class="pull-request-icon mega-octicon octicon-git-pull-request"></span>
-                  <span class="repo-name">
-                    <a href="#">michael-reeves/redrum_nursery</a>
-                  </span>
-                  <span class="last-updated">Updated 2015-08-15</span>
-                </li>
-                <li class="pull-request-item">
-                  <span class="pull-request-icon mega-octicon octicon-git-pull-request"></span>
-                  <span class="repo-name">
-                    <a href="#">michael-reeves/chisel</a>
-                  </span>
-                  <span class="last-updated">Updated 2015-08-01</span>
-                </li>
-                <li class="pull-request-item">
-                  <span class="pull-request-icon mega-octicon octicon-git-pull-request"></span>
-                  <span class="repo-name">
-                    <a href="#">michael-reeves/sales_engine</a>
-                  </span>
-                  <span class="last-updated">Updated 2015-06-15</span>
-                </li>
+                <% @pull_requests.each do |pull_request| %>
+                  <li class="pull-request-item">
+                    <span class="pull-request-icon mega-octicon octicon-git-pull-request"></span>
+                    <span class="pull-request">
+                      <%= link_to pull_request.title, pull_request.url %>
+                    </span>
+                    <span class="last-updated">
+                      Updated <%= pull_request.updated_at[0..9] %>
+                    </span>
+                  </li>
+                <% end %>
               </ul>
             </div>
           </div>
@@ -613,26 +596,9 @@
       <aside class="col-md-3 recent-activity">
         <h3>Recent Activity</h3>
         <ul>
-          <li>#11 Planning & Requirements Sep 8
-              michael-reeves/octo_kitty</li>
-          <li>Open#10 User creates a new repository Sep 8
-              michael-reeves/octo_kitty</li>
-          <li>Open#9 User sees mentions Sep 8
-              michael-reeves/octo_kitty</li>
-          <li>Open#8 User sees pull requests Sep 8
-              michael-reeves/octo_kitty</li>
-          <li>Open#7 User sees repo list Sep 8
-              michael-reeves/octo_kitty</li>
-          <li>Open#6 User sees organizations Sep 8
-              michael-reeves/octo_kitty</li>
-          <li>Open#5 User sees activity of people they follow Sep 8
-              michael-reeves/octo_kitty</li>
-          <li>Open#4 User sees recent activity Sep 8
-              michael-reeves/octo_kitty</li>
-          <li>Open#3 User sees contributions Sep 8
-              michael-reeves/octo_kitty</li>
-          <li>Open#2 User visits dashboard Sep 8
-              michael-reeves/octo_kitty</li>
+          <%# @events.each do |event| %>
+          <li> <%#= event[:nickname] %> <%#= event[:action] %> <%#= event.payload %> </li>
+          <%# end %>
         </ul>
       </aside>
 
