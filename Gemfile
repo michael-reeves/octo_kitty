@@ -34,6 +34,8 @@ gem 'puma'
 
 gem 'omniauth-github'
 gem 'figaro'
+# gem 'github_api'
+gem 'httparty'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -44,6 +46,11 @@ group :development, :test do
 
   gem 'byebug'
   gem 'web-console', '~> 2.0'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do

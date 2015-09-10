@@ -21,23 +21,6 @@ RSpec.configure do |config|
   # elimiate garbage in backtrace
   config.backtrace_exclusion_patterns << %r{/gems/}
 
-  # database_cleaner gem
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
-  end
-
-# OmniAuth.config.add_mock(:github, omniauth_hash)
-
-  config.before(:each) do
-    OmniAuth.config.mock_auth[:github] = nil
-  end
-
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
