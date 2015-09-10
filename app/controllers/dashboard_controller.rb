@@ -10,6 +10,8 @@ class DashboardController < ApplicationController
     @pull_requests = github.pull_requests
     @user          = github.user
     @repos         = github.repos
+    @pushes        = github.pushes
+    @folows        = []
 
 # pry
     # events = github.events
