@@ -45,4 +45,20 @@ describe Github, :vcr do
       expect(user.following).to    eq 2
     end
   end
+
+  describe '#repos' do
+    it "have data" do
+      github = Github.new('michael-reeves')
+      repos   = github.repos
+      repo    = repos.first
+
+      expect(repo.id).to          eq 39031779
+      expect(repo.name).to        eq 'active-record-sinatra'
+      expect(repo.owner).to       eq 'michael-reeves'
+      expect(repo.git_url).to     eq 'git://github.com/michael-reeves/active-record-sinatra.git'
+      expect(repo.ssh_url).to     eq 'git@github.com:michael-reeves/active-record-sinatra.git'
+      expect(repo.description).to be_nil
+      expect(repo.open_issues).to eq 0
+    end
+  end
 end
