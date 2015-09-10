@@ -103,7 +103,7 @@ def login_user
     uid: '1235456',
     credentials: { token: '123456789' },
     info: { email:    'michael@example.com',
-            nickname: 'example-user',
+            nickname: 'michael',
             name:     'Michael Example',
             image:    'http://fakeaddress.com/image.jpg' }
   })
