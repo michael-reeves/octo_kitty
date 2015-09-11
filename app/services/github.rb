@@ -43,9 +43,17 @@ class Github
 
   def starred_repos
     response = HTTParty.get("https://api.github.com/users/#{@username}/starred")
-    
+
     JSON.parse(response.body, symbolize_names: true).map do |star_repo|
       StarredRepo.new(star_repo)
+    end
+  end
+
+  def orgs
+    response = HTTParty.get("https://api.github.com/users/#{@username}/orgs")
+
+    JSON.parse(response.body, symbolize_names: true).map do |org|
+      Org.new(org)
     end
   end
 

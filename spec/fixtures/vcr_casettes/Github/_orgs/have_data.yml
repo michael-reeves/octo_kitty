@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/users/eprimucci/orgs
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 11 Sep 2015 00:46:05 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Ratelimit-Reset:
+      - '1441932764'
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Etag:
+      - W/"82390231b673f08b113c2ba019f1abf0"
+      Vary:
+      - Accept
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Github-Request-Id:
+      - 26846965:1649:A04A67C:55F2244C
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - 173530fed4bbeb1e264b2ed22e8b5c20
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"CodigoAustral","id":2042055,"url":"https://api.github.com/orgs/CodigoAustral","repos_url":"https://api.github.com/orgs/CodigoAustral/repos","events_url":"https://api.github.com/orgs/CodigoAustral/events","members_url":"https://api.github.com/orgs/CodigoAustral/members{/member}","public_members_url":"https://api.github.com/orgs/CodigoAustral/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/2042055?v=3","description":null}]'
+    http_version: 
+  recorded_at: Fri, 11 Sep 2015 00:46:03 GMT
+recorded_with: VCR 2.9.3

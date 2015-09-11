@@ -2,7 +2,6 @@ class Repo
   attr_reader :id, :name, :description, :owner, :html_url,
               :git_url, :ssh_url, :open_issues, :updated_at
 
-
   def initialize(repo)
     @raw_request = repo
     @id          = repo[:id]

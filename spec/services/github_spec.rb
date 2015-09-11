@@ -90,4 +90,19 @@ describe Github, :vcr do
       expect(star_repo.html_url).to    eq 'https://github.com/kpearson/dotfiles'
     end
   end
+
+  describe '#orgs' do
+    it "have data" do
+      github = Github.new('eprimucci')
+      orgs   = github.orgs
+      org    = orgs.first
+
+      expect(orgs.count).to      eq 1
+      expect(org.id).to          eq 2042055
+      expect(org.name).to        eq "CodigoAustral"
+      expect(org.description).to be_nil
+      expect(org.url).to         eq 'https://api.github.com/orgs/CodigoAustral'
+      expect(org.avatar).to      eq 'https://avatars.githubusercontent.com/u/2042055?v=3'
+    end
+  end
 end
