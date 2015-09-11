@@ -163,18 +163,15 @@
             </div>
             <div class="tab-pane fade" id="following">
               <ul class="following-list">
-                <#% @follows.each do |follow| %>
+                <% @follow_pushes.each do |follow_push| %>
                   <li class="follow-item">
-                    <span class="follow-icon mega-octicon octicon-git-person"></span>
-                    <span class="follow">
-                      <%#= follow.actor_nickname %>
-                      <%#= link_to follow.title, follow.url %>
-                    </span>
-                    <span class="last-updated">
-                      Updated <%#=  follow.updated_at.strftime("%Y-%m-%d") %>
+                    <span class="person-icon mega-octicon octicon-git-person"></span>
+                    <span class="follow-push">
+                      <%= follow_push.actor_nickname %> pushed
+                      <%= link_to "#{follow_push.size} commits to #{follow_push.repo}", follow_push.repo_url %>
                     </span>
                   </li>
-                <#% end %>
+                <% end %>
               </ul>
             </div>
           </div> <!-- ./#activity-tab -->
