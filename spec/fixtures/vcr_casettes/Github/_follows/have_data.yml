@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/users/michael-reeves/following
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 11 Sep 2015 05:21:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '38'
+      X-Ratelimit-Reset:
+      - '1441950053'
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Etag:
+      - W/"f1ef97b72c954a72f7a684d8ffaa5ece"
+      Vary:
+      - Accept
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Github-Request-Id:
+      - C2BBFAE6:13219:A213CB0:55F264D6
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - 8a5c38021a5cd7cef7b8f49a296fee40
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"noobjey","id":8325508,"avatar_url":"https://avatars.githubusercontent.com/u/8325508?v=3","gravatar_id":"","url":"https://api.github.com/users/noobjey","html_url":"https://github.com/noobjey","followers_url":"https://api.github.com/users/noobjey/followers","following_url":"https://api.github.com/users/noobjey/following{/other_user}","gists_url":"https://api.github.com/users/noobjey/gists{/gist_id}","starred_url":"https://api.github.com/users/noobjey/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/noobjey/subscriptions","organizations_url":"https://api.github.com/users/noobjey/orgs","repos_url":"https://api.github.com/users/noobjey/repos","events_url":"https://api.github.com/users/noobjey/events{/privacy}","received_events_url":"https://api.github.com/users/noobjey/received_events","type":"User","site_admin":false},{"login":"Drew242","id":11841077,"avatar_url":"https://avatars.githubusercontent.com/u/11841077?v=3","gravatar_id":"","url":"https://api.github.com/users/Drew242","html_url":"https://github.com/Drew242","followers_url":"https://api.github.com/users/Drew242/followers","following_url":"https://api.github.com/users/Drew242/following{/other_user}","gists_url":"https://api.github.com/users/Drew242/gists{/gist_id}","starred_url":"https://api.github.com/users/Drew242/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Drew242/subscriptions","organizations_url":"https://api.github.com/users/Drew242/orgs","repos_url":"https://api.github.com/users/Drew242/repos","events_url":"https://api.github.com/users/Drew242/events{/privacy}","received_events_url":"https://api.github.com/users/Drew242/received_events","type":"User","site_admin":false}]'
+    http_version: 
+  recorded_at: Fri, 11 Sep 2015 05:21:26 GMT
+recorded_with: VCR 2.9.3

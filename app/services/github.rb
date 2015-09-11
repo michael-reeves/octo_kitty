@@ -69,11 +69,13 @@ class Github
     response = HTTParty.get("https://api.github.com/users/#{@username}/followers?per_page=100")
   end
 
-  def following
-    @following ||= begin
+  def follows
+    @follows ||= begin
       response = HTTParty.get("https://api.github.com/users/#{@username}/following")
 
-      JSON.parse(response.body, symbolize_names: true)
+      JSON.parse(response.body, symbolize_names: true).map do |follow|
+        Follow.new(follow)
+      end
     end
   end
 end

@@ -105,4 +105,18 @@ describe Github, :vcr do
       expect(org.avatar).to      eq 'https://avatars.githubusercontent.com/u/2042055?v=3'
     end
   end
+
+  describe '#follows' do
+    it 'have data' do
+      github  = Github.new('michael-reeves')
+      follows = github.follows
+      follow  = follows.first
+
+      expect(follows.count).to   eq 2
+      expect(follow.id).to       eq 8325508
+      expect(follow.nickname).to eq 'noobjey'
+      expect(follow.avatar).to   eq 'https://avatars.githubusercontent.com/u/8325508?v=3'
+      expect(follow.html_url).to eq 'https://github.com/noobjey'
+    end
+  end
 end
