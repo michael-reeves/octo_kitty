@@ -102,7 +102,7 @@ def user
               provider:  'github',
               uid:       '7769973',
               token:     ENV['GITHUB_USER_TOKEN'],
-              email:     'mreeves68@yahoo.com',
+              email:     '',
               nickname:  'michael-reeves',
               image_url: 'https://avatars.githubusercontent.com/u/7769973?v=3'
             )
