@@ -12,6 +12,7 @@ class DashboardController < ApplicationController
     @repos         = github.repos
     @pushes        = github.pushes
     @folows        = []
+    @starred_repos = github.starred_repos
 
 # pry
     # events = github.events
