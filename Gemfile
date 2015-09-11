@@ -35,6 +35,7 @@ gem 'puma'
 gem 'omniauth-github'
 gem 'figaro'
 # gem 'github_api'
+gem 'githubstats'
 gem 'httparty'
 
 group :development, :test do

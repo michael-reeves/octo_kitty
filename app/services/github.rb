@@ -12,48 +12,56 @@ class Github
   end
 
   def pull_requests
-    pull_requests = events.find_all do |event|
+    @pull_requests ||= events.find_all do |event|
       event[:type] == 'PullRequestEvent'
     end
 
-    pull_requests.map { |request| PullRequestEvent.new(request) }
+    @pull_requests.map { |request| PullRequestEvent.new(request) }
   end
 
   def pushes
-    pushes = events.find_all do |event|
+    @pushes ||= events.find_all do |event|
       event[:type] == 'PushEvent'
     end
 
-    pushes.map { |push| PushEvent.new(push) }
+    @pushes.map { |push| PushEvent.new(push) }
   end
 
   def repos
-    response = HTTParty.get("https://api.github.com/users/#{@username}/repos?per_page=100")
+    @repos ||= begin
+      response = HTTParty.get("https://api.github.com/users/#{@username}/repos?per_page=100")
 
-    JSON.parse(response.body, symbolize_names: true).map do |request|
-      Repo.new(request)
+      JSON.parse(response.body, symbolize_names: true).map do |request|
+        Repo.new(request)
+      end
     end
   end
 
   def user
-    response = HTTParty.get("https://api.github.com/users/#{@username}")
+    @user ||= begin
+      response = HTTParty.get("https://api.github.com/users/#{@username}")
 
-    OpenStruct.new(JSON.parse(response.body))
+      OpenStruct.new(JSON.parse(response.body))
+    end
   end
 
   def starred_repos
-    response = HTTParty.get("https://api.github.com/users/#{@username}/starred")
+    @starred_repos ||= begin
+      response = HTTParty.get("https://api.github.com/users/#{@username}/starred")
 
-    JSON.parse(response.body, symbolize_names: true).map do |star_repo|
-      StarredRepo.new(star_repo)
+      JSON.parse(response.body, symbolize_names: true).map do |star_repo|
+        StarredRepo.new(star_repo)
+      end
     end
   end
 
   def orgs
-    response = HTTParty.get("https://api.github.com/users/#{@username}/orgs")
+    @orgs ||= begin
+      response = HTTParty.get("https://api.github.com/users/#{@username}/orgs")
 
-    JSON.parse(response.body, symbolize_names: true).map do |org|
-      Org.new(org)
+      JSON.parse(response.body, symbolize_names: true).map do |org|
+        Org.new(org)
+      end
     end
   end
 
@@ -62,6 +70,10 @@ class Github
   end
 
   def following
-    response = HTTParty.get("https://api.github.com/users/#{@username}/following")
+    @following ||= begin
+      response = HTTParty.get("https://api.github.com/users/#{@username}/following")
+
+      JSON.parse(response.body, symbolize_names: true)
+    end
   end
 end
