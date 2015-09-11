@@ -65,10 +65,6 @@ class Github
     end
   end
 
-  def followers
-    response = HTTParty.get("https://api.github.com/users/#{@username}/followers?per_page=100")
-  end
-
   def follows
     @follows ||= begin
       response = HTTParty.get("https://api.github.com/users/#{@username}/following")
