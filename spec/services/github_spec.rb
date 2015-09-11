@@ -75,4 +75,19 @@ describe Github, :vcr do
       expect(repo.open_issues).to eq 0
     end
   end
+
+  describe '#starred_repos' do
+    it "have data" do
+      github        = Github.new('michael-reeves')
+      starred_repos = github.starred_repos
+      star_repo     = starred_repos.last
+
+      expect(starred_repos.count).to   eq 2
+      expect(star_repo.id).to          eq 30768220
+      expect(star_repo.owner).to       eq 'kpearson'
+      expect(star_repo.repo_name).to   eq 'kpearson/dotfiles'
+      expect(star_repo.description).to eq 'System settings and dotfiles'
+      expect(star_repo.html_url).to    eq 'https://github.com/kpearson/dotfiles'
+    end
+  end
 end

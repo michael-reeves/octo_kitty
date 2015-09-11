@@ -1,6 +1,3 @@
-require_relative '../presenters/pull_request_event'
-require_relative '../presenters/repo'
-
 class Github
   def initialize(username)
     @username = username
@@ -33,7 +30,7 @@ class Github
   def repos
     response = HTTParty.get("https://api.github.com/users/#{@username}/repos?per_page=100")
 
-    output = JSON.parse(response.body, symbolize_names: true).map do |request|
+    JSON.parse(response.body, symbolize_names: true).map do |request|
       Repo.new(request)
     end
   end
@@ -44,8 +41,12 @@ class Github
     OpenStruct.new(JSON.parse(response.body))
   end
 
-  def starred
+  def starred_repos
     response = HTTParty.get("https://api.github.com/users/#{@username}/starred")
+    
+    JSON.parse(response.body, symbolize_names: true).map do |star_repo|
+      StarredRepo.new(star_repo)
+    end
   end
 
   def followers

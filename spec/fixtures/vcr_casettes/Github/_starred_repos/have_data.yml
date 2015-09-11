@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/users/michael-reeves/starred
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 10 Sep 2015 23:59:48 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '55'
+      X-Ratelimit-Reset:
+      - '1441932764'
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Etag:
+      - W/"e33faf6d941b47d897f89e8883769eeb"
+      Vary:
+      - Accept
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Github-Request-Id:
+      - 26846965:19D5:2776202:55F21973
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - 8dd185e423974a7e13abbbe6e060031e
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":41321965,"name":"the_pivot","full_name":"mrjaimisra/the_pivot","owner":{"login":"mrjaimisra","id":8093774,"avatar_url":"https://avatars.githubusercontent.com/u/8093774?v=3","gravatar_id":"","url":"https://api.github.com/users/mrjaimisra","html_url":"https://github.com/mrjaimisra","followers_url":"https://api.github.com/users/mrjaimisra/followers","following_url":"https://api.github.com/users/mrjaimisra/following{/other_user}","gists_url":"https://api.github.com/users/mrjaimisra/gists{/gist_id}","starred_url":"https://api.github.com/users/mrjaimisra/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/mrjaimisra/subscriptions","organizations_url":"https://api.github.com/users/mrjaimisra/orgs","repos_url":"https://api.github.com/users/mrjaimisra/repos","events_url":"https://api.github.com/users/mrjaimisra/events{/privacy}","received_events_url":"https://api.github.com/users/mrjaimisra/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/mrjaimisra/the_pivot","description":"Turing
+        School Module 3","fork":false,"url":"https://api.github.com/repos/mrjaimisra/the_pivot","forks_url":"https://api.github.com/repos/mrjaimisra/the_pivot/forks","keys_url":"https://api.github.com/repos/mrjaimisra/the_pivot/keys{/key_id}","collaborators_url":"https://api.github.com/repos/mrjaimisra/the_pivot/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/mrjaimisra/the_pivot/teams","hooks_url":"https://api.github.com/repos/mrjaimisra/the_pivot/hooks","issue_events_url":"https://api.github.com/repos/mrjaimisra/the_pivot/issues/events{/number}","events_url":"https://api.github.com/repos/mrjaimisra/the_pivot/events","assignees_url":"https://api.github.com/repos/mrjaimisra/the_pivot/assignees{/user}","branches_url":"https://api.github.com/repos/mrjaimisra/the_pivot/branches{/branch}","tags_url":"https://api.github.com/repos/mrjaimisra/the_pivot/tags","blobs_url":"https://api.github.com/repos/mrjaimisra/the_pivot/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/mrjaimisra/the_pivot/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/mrjaimisra/the_pivot/git/refs{/sha}","trees_url":"https://api.github.com/repos/mrjaimisra/the_pivot/git/trees{/sha}","statuses_url":"https://api.github.com/repos/mrjaimisra/the_pivot/statuses/{sha}","languages_url":"https://api.github.com/repos/mrjaimisra/the_pivot/languages","stargazers_url":"https://api.github.com/repos/mrjaimisra/the_pivot/stargazers","contributors_url":"https://api.github.com/repos/mrjaimisra/the_pivot/contributors","subscribers_url":"https://api.github.com/repos/mrjaimisra/the_pivot/subscribers","subscription_url":"https://api.github.com/repos/mrjaimisra/the_pivot/subscription","commits_url":"https://api.github.com/repos/mrjaimisra/the_pivot/commits{/sha}","git_commits_url":"https://api.github.com/repos/mrjaimisra/the_pivot/git/commits{/sha}","comments_url":"https://api.github.com/repos/mrjaimisra/the_pivot/comments{/number}","issue_comment_url":"https://api.github.com/repos/mrjaimisra/the_pivot/issues/comments{/number}","contents_url":"https://api.github.com/repos/mrjaimisra/the_pivot/contents/{+path}","compare_url":"https://api.github.com/repos/mrjaimisra/the_pivot/compare/{base}...{head}","merges_url":"https://api.github.com/repos/mrjaimisra/the_pivot/merges","archive_url":"https://api.github.com/repos/mrjaimisra/the_pivot/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/mrjaimisra/the_pivot/downloads","issues_url":"https://api.github.com/repos/mrjaimisra/the_pivot/issues{/number}","pulls_url":"https://api.github.com/repos/mrjaimisra/the_pivot/pulls{/number}","milestones_url":"https://api.github.com/repos/mrjaimisra/the_pivot/milestones{/number}","notifications_url":"https://api.github.com/repos/mrjaimisra/the_pivot/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/mrjaimisra/the_pivot/labels{/name}","releases_url":"https://api.github.com/repos/mrjaimisra/the_pivot/releases{/id}","created_at":"2015-08-24T19:11:06Z","updated_at":"2015-09-10T23:58:57Z","pushed_at":"2015-09-08T20:15:55Z","git_url":"git://github.com/mrjaimisra/the_pivot.git","ssh_url":"git@github.com:mrjaimisra/the_pivot.git","clone_url":"https://github.com/mrjaimisra/the_pivot.git","svn_url":"https://github.com/mrjaimisra/the_pivot","homepage":null,"size":545052,"stargazers_count":1,"watchers_count":1,"language":"Ruby","has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":11,"forks":0,"open_issues":11,"watchers":1,"default_branch":"master"},{"id":30768220,"name":"dotfiles","full_name":"kpearson/dotfiles","owner":{"login":"kpearson","id":3293289,"avatar_url":"https://avatars.githubusercontent.com/u/3293289?v=3","gravatar_id":"","url":"https://api.github.com/users/kpearson","html_url":"https://github.com/kpearson","followers_url":"https://api.github.com/users/kpearson/followers","following_url":"https://api.github.com/users/kpearson/following{/other_user}","gists_url":"https://api.github.com/users/kpearson/gists{/gist_id}","starred_url":"https://api.github.com/users/kpearson/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/kpearson/subscriptions","organizations_url":"https://api.github.com/users/kpearson/orgs","repos_url":"https://api.github.com/users/kpearson/repos","events_url":"https://api.github.com/users/kpearson/events{/privacy}","received_events_url":"https://api.github.com/users/kpearson/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/kpearson/dotfiles","description":"System
+        settings and dotfiles","fork":false,"url":"https://api.github.com/repos/kpearson/dotfiles","forks_url":"https://api.github.com/repos/kpearson/dotfiles/forks","keys_url":"https://api.github.com/repos/kpearson/dotfiles/keys{/key_id}","collaborators_url":"https://api.github.com/repos/kpearson/dotfiles/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/kpearson/dotfiles/teams","hooks_url":"https://api.github.com/repos/kpearson/dotfiles/hooks","issue_events_url":"https://api.github.com/repos/kpearson/dotfiles/issues/events{/number}","events_url":"https://api.github.com/repos/kpearson/dotfiles/events","assignees_url":"https://api.github.com/repos/kpearson/dotfiles/assignees{/user}","branches_url":"https://api.github.com/repos/kpearson/dotfiles/branches{/branch}","tags_url":"https://api.github.com/repos/kpearson/dotfiles/tags","blobs_url":"https://api.github.com/repos/kpearson/dotfiles/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/kpearson/dotfiles/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/kpearson/dotfiles/git/refs{/sha}","trees_url":"https://api.github.com/repos/kpearson/dotfiles/git/trees{/sha}","statuses_url":"https://api.github.com/repos/kpearson/dotfiles/statuses/{sha}","languages_url":"https://api.github.com/repos/kpearson/dotfiles/languages","stargazers_url":"https://api.github.com/repos/kpearson/dotfiles/stargazers","contributors_url":"https://api.github.com/repos/kpearson/dotfiles/contributors","subscribers_url":"https://api.github.com/repos/kpearson/dotfiles/subscribers","subscription_url":"https://api.github.com/repos/kpearson/dotfiles/subscription","commits_url":"https://api.github.com/repos/kpearson/dotfiles/commits{/sha}","git_commits_url":"https://api.github.com/repos/kpearson/dotfiles/git/commits{/sha}","comments_url":"https://api.github.com/repos/kpearson/dotfiles/comments{/number}","issue_comment_url":"https://api.github.com/repos/kpearson/dotfiles/issues/comments{/number}","contents_url":"https://api.github.com/repos/kpearson/dotfiles/contents/{+path}","compare_url":"https://api.github.com/repos/kpearson/dotfiles/compare/{base}...{head}","merges_url":"https://api.github.com/repos/kpearson/dotfiles/merges","archive_url":"https://api.github.com/repos/kpearson/dotfiles/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/kpearson/dotfiles/downloads","issues_url":"https://api.github.com/repos/kpearson/dotfiles/issues{/number}","pulls_url":"https://api.github.com/repos/kpearson/dotfiles/pulls{/number}","milestones_url":"https://api.github.com/repos/kpearson/dotfiles/milestones{/number}","notifications_url":"https://api.github.com/repos/kpearson/dotfiles/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/kpearson/dotfiles/labels{/name}","releases_url":"https://api.github.com/repos/kpearson/dotfiles/releases{/id}","created_at":"2015-02-13T17:49:50Z","updated_at":"2015-05-29T03:37:04Z","pushed_at":"2015-08-02T08:29:28Z","git_url":"git://github.com/kpearson/dotfiles.git","ssh_url":"git@github.com:kpearson/dotfiles.git","clone_url":"https://github.com/kpearson/dotfiles.git","svn_url":"https://github.com/kpearson/dotfiles","homepage":null,"size":37244,"stargazers_count":3,"watchers_count":3,"language":"Python","has_issues":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":3,"default_branch":"master"}]'
+    http_version: 
+  recorded_at: Thu, 10 Sep 2015 23:59:46 GMT
+recorded_with: VCR 2.9.3
