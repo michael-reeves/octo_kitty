@@ -1,8 +1,7 @@
 <div class="container-fluid container-home">
   <div id="banner" class="page-header">
-    <h1>Dashboard</h1>
+    <h1 class="col-md-offset-1">Dashboard</h1>
   </div>
-
   <div class="container">
     <div class="row">
       <div class="row col-md-9">
@@ -26,7 +25,7 @@
 
                 </div> <!-- ./row -->
                 <div class="row">
-                  <div class="col-md-6 col-md-offset-4">
+                  <div class="col-md-6 col-md-offset-2">
                     <table>
                       <tr>
                         <td><%= current_user.info.followers %></td>
@@ -46,6 +45,41 @@
                   </div>
                 </div> <!-- ./row -->
               </div>
+
+              <div class="contributions col-md-6">
+                <h3>Contributions</h3>
+                <div class="row">
+                  <div class="contrib-column contrib-column-first col-md-4">
+                    <p>Commits last year:</p>
+                    <span class="contrib-number">
+                      <%= current_user.yearly_commit_activity %>
+                    </span>
+                    <br>
+                    <%= (Date.today - 1.year).strftime('%b %e') %> – <%= Date.today.strftime('%b %e') %>
+                  </div>
+
+                  <div class="contrib-column contrib-column-center col-md-4">
+                    <p>Longest streak:</p>
+                    <span class="contrib-number">
+                      <%= current_user.longest_streak.count %>
+                    </span><br>
+                    <%= current_user.longest_streak.first.date.strftime("%b %e") %> –
+                    <%= current_user.longest_streak.last.date.strftime("%b %e") %>
+                  </div>
+
+                  <div class="contrib-column col-md-4">
+                    <p>Current streak:</p>
+                    <span class="contrib-number">
+                      <%= current_user.current_streak.count %>
+                    </span><br>
+                    <%= current_user.current_streak.first.date.strftime("%b %e") %> –
+                    <%= current_user.current_streak.last.date.strftime("%b %e") %>
+                  </div>
+
+                </div> <!-- ./row -->
+                <br>
+              </div>
+
               <div class="organizations col-md-6">
                 <h3>Organizations</h3>
                 <% current_user.orgs.each do |org| %>
@@ -56,39 +90,11 @@
                   </div>
                 <% end %>
               </div>
-              <div class="row clear" id="contributions-row">
-                <div class="contributions">
-                  <h3>Contributions</h3>
-                  <div class="contrib-column contrib-column-first col-md-4">
-                    <span class="text-muted">Contributions in the last year</span>
-                    <span class="contrib-number">
-                      <%= current_user.yearly_commit_activity %> total
-                    </span>
-                    <span class="text-muted"><%= (Date.today - 1.year).strftime('%b %e, %Y') %> – <%= Date.today.strftime('%b %e, %Y') %></span>
-                  </div>
-                  <div class="contrib-column col-md-4">
-                    <span class="text-muted">Longest streak</span>
-                    <span class="contrib-number"><%= current_user.longest_streak.count %></span>
-                    <span class="text-muted">
-                      <%= current_user.longest_streak.first.date.strftime("%b %e") %> –
-                      <%= current_user.longest_streak.last.date.strftime("%b %e") %>
-                    </span>
-                  </div>
-                  <div class="contrib-column col-md-4">
-                    <span class="text-muted">Current streak</span>
-                    <span class="contrib-number"><%= current_user.current_streak.count %></span>
-                    <span class="text-muted">
-                      <%= current_user.current_streak.first.date.strftime("%b %e") %> –
-                      <%= current_user.current_streak.last.date.strftime("%b %e") %>
-                    </span>
-                  </div>
-                </div>
-              </div> <!-- ./row -->
             </div> <!-- ./row -->
           </div> <!-- ./row -->
         </div> <!-- ./profile -->
 
-        <br>
+        <br><br>
 
         <div class="row" id="repositories-row">
           <div class="bs-component pill-container col-md-12">
@@ -165,7 +171,7 @@
               <ul class="following-list">
                 <% @follow_pushes.each do |follow_push| %>
                   <li class="follow-item">
-                    <span class="person-icon mega-octicon octicon-git-person"></span>
+                    <span class="person-icon mega-octicon octicon-person"></span>
                     <span class="follow-push">
                       <%= follow_push.actor_nickname %> pushed
                       <%= link_to "#{follow_push.size} commits to #{follow_push.repo}", follow_push.repo_url %>

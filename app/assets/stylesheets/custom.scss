@@ -23,7 +23,8 @@ aside {
     margin-top: .3em;
   }
   table {
-    margin-left: 15px;
+    margin-top: 20px;
+    margin-left: 0px;
     tr {
       margin: 0px;
     }
@@ -43,6 +44,17 @@ aside {
     h6 {
       font-size-adjust: 0.5;
     }
+  }
+  .contributions {
+    border-bottom:  1px solid #dddddd;
+  }
+  .contrib-column-center {
+    border-left:  1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+  }
+  .contrib-number {
+    font-size-adjust: 1.1;
+    font-weight: bold;
   }
 }
 
